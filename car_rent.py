@@ -122,8 +122,8 @@ def perDayRent(car):
     """This function takes the json response and lists all cars those have the
     cheapest perday rent. Function also make sure to list only the first 10
     best rates for the day:
-    keyword arguments:
-    count= this variable is used to list as ID as well as used to count to list
+    
+    :param count: int - this variable is used to list as ID as well as used to count to list
     up to first best 10 deals.
 
     """
@@ -151,8 +151,8 @@ def perDayRentwithDiscount(car):
     """This function takes the json response and lists all cars those have the
     cheapest perday rent with discout added. Function also make sure to list
     only the first 5 best rates for the day:
-    keyword arguments:
-    count= this variable is used to list as ID as well as used to count to list
+    
+    : param count: int- this variable is used to list as ID as well as used to count to list
     up to first best 5 deals.
 
     """
@@ -180,8 +180,8 @@ def revenueYoY(car):
     """This function takes the json response and calculates the YearOverYear
     revenue. Idea is to find out which car produced highest profit.
 
-    keyword arguments:
-    expenses: is used to store year over year maintenance cost + depreciation.
+  
+    : param expenses:list- is used to store year over year maintenance cost + depreciation.
 
     """
     expenses=[]
