@@ -200,7 +200,9 @@ def revenueYoY(car):
 
 
 
-blueTeslaWithNotes(car)
-perDayRent(car)
-perDayRentwithDiscount(car)
-revenueYoY(car)
+#Running each function  one after another and listing output.
+if __name__=='__main__':
+    blueTeslaWithNotes(car)
+    perDayRent(car)
+    perDayRentwithDiscount(car)
+    revenueYoY(car)
