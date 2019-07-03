@@ -1,0 +1,5 @@
+with open('file.txt') as f1:
+	file=f1.read()
+	for num,line in enumerate(f1,1):
+		if 'replace@gmail.ss' in line:
+			print("found email in line#", num)

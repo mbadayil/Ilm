@@ -118,12 +118,13 @@ def blueTeslaWithNotes(car):
             ['vin'],"\t\t",car['Car'][cars]['metadata']['Notes'])
 
 
-def perDayRent(car):
+def perDayRent(car):#car variable is the json response stored from
+    #API response. This was done at the begining of the file
     """This function takes the json response and lists all cars those have the
     cheapest perday rent. Function also make sure to list only the first 10
     best rates for the day:
-    
-    :param count: int - this variable is used to list as ID as well as used to count to list
+    keyword arguments:
+    count= this variable is used to list as ID as well as used to count to list
     up to first best 10 deals.
 
     """
@@ -147,12 +148,13 @@ def perDayRent(car):
 
 
 
-def perDayRentwithDiscount(car):
+def perDayRentwithDiscount(car):#car variable is the json response stored from
+    #API response. This was done at the begining of the file
     """This function takes the json response and lists all cars those have the
     cheapest perday rent with discout added. Function also make sure to list
     only the first 5 best rates for the day:
-    
-    : param count: int- this variable is used to list as ID as well as used to count to list
+    keyword arguments:
+    count: this variable is used to list as ID as well as used to count to list
     up to first best 5 deals.
 
     """
@@ -176,20 +178,20 @@ def perDayRentwithDiscount(car):
 
 
 
-def revenueYoY(car):
+def revenueYoY(car):#car variable is the json response stored from
+    #API response. This was done at the begining of the file
     """This function takes the json response and calculates the YearOverYear
     revenue. Idea is to find out which car produced highest profit.
 
-  
-    : param expenses:list- is used to store year over year maintenance cost + depreciation.
+    keyword arguments:
+    expenses: is used to store year over year maintenance cost + depreciation.
 
     """
     expenses=[]
     for cars in range(len(car['Car'])):
         expenses.append(round(car['Car'][cars]['metrics']['yoymaintenancecost']+
         car['Car'][cars]['metrics']['depreciation'],2))#Used round function to store only 2 digits after decimal
-    print("\nListing all  cars that produced the highest profit in the last year:"\
-     "\n")
+    print("\nListing all  cars that produced the highest profit in the last year:\n")
     print("MAKE:           COLOR:           MODEL:")
     for exp in expenses:
         for rev in range(len(car['Car'])):
@@ -197,8 +199,6 @@ def revenueYoY(car):
             [rev]['metrics']['depreciation'],2)==exp: #Used round function to store only 2 digits after decimal
                 print(car['Car'][rev]['make'],"\t\t",car['Car'][rev]['metadata']\
                 ['Color'],"\t\t",car['Car'][rev]['model'])
-
-
 
 #Running each function  one after another and listing output.
 if __name__=='__main__':
